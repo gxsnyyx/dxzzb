@@ -1,0 +1,72 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 20px;
+}
+ 
+.tabcontent {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  border-top: 1px solid #f2f5fa;
+  border-bottom: 1px solid #f2f5fa;
+}
+ 
+.tabcell {
+  width: 50%;
+  line-height: 44px;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+}
+ 
+.active {
+  font-weight: bold;
+}
+ 
+.active::after {
+  content: '';
+  width: 80px;
+  position: absolute;
+  height: 4px;
+  background: #2e7bfd;
+  left: 50%;
+  margin-left: -40px;
+  bottom: 0px;
+}
+.all_live{
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+.swiper{
+  width: 100%;
+}
+.swiper_img{
+  height: 100%;
+  width: 100%;
+}
+.all_living,.all_notice{
+  height: 130px;
+  position: relative;
+}
+.all_living_bottom{
+  position: absolute;
+  bottom: 0;
+  width: 99%;
+}

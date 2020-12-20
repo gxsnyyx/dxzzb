@@ -1,0 +1,19 @@
+<!--pages/main/main.wxml-->
+<view class="login-container">
+  <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  <view class="container-middle">
+    <input class="weui-input middle-input" type="idcard" bindinput="bindIdNumInput" focus placeholder="请您输入保单中的证件号" />
+  </view>
+  <view class="container-bottom">
+    <button class="bottom-btn" bindtap="enterRoom">进入</button>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container">
+<!-- 头部 -->
+<view class="tabcontent">
+  <block wx:for="{{tabs}}" wx:key="*this">
+    <view id="{{index}}" class="tabcell {{ activeIndex==index?'active':'' }} " bindtap="tabClick">
+      {{item}}
+    </view>
+  </block>
+</view>
+<scroll-view scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" class="all_live">
+  <view  id="show_0" class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image id="u144_img" class="swiper_img" mode="scaleToFill" src="{{item}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 直播中 -->
+  <view id="show_1" class="all_living" style="background-image: url({{livingBackgroundImg}}); background-size: 100% 100%;">
+    <view>
+      <text>直播中</text>
+      <text>100000人观看</text>
+    </view>
+    <view class="all_living_bottom">
+      <view style="float:left">亚辉美食广场</view>
+      <view style="float:right">1.3w</view>
+    </view>
+  </view>
+  <!-- 待直播 -->
+  <view id="show_2" class="all_notice" style="background-image: url({{livingBackgroundImg}}); background-size: 100% 100%;">
+    <view>
+      <text>预告</text>
+      <text>今天18：45</text>
+    </view>
+  </view>
+  <!-- 录播 -->
+  <view id="show_3" class="all_notice" style="background-image: url({{livingBackgroundImg}}); background-size: 100% 100%;">
+    <view>
+      <text>录播</text>
+      <!-- <text>今天18：45</text> -->
+    </view>
+  </view>
+</scroll-view>
+</view>
