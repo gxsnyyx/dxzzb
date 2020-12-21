@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userIcon: '/images/xcxsy/u144.jpg',
+    mySeeList: ["/images/xcxsy/u144.jpg", "/images/xcxsy/u144.jpg"]
   },
 
   /**

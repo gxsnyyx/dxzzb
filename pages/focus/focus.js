@@ -7,7 +7,9 @@ Page({
   data: {
 
   },
-
+  statechange(e) {
+    console.log('live-pusher code:', e.detail.code)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
