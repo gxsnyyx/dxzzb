@@ -1,0 +1,11 @@
+<!--pages/editUser/editUser.wxml-->
+<!-- <text>pages/editUser/editUser.wxml</text> -->
+
+<mp-cell link class="userInfo" value="无hover效果，带跳转URL" >
+    <image slot="footer" src="{{userIcon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <!-- <view slot='footer' class="mini-btn" type="default" size="mini" bindtap="jumptoeditUserInfo">修改资料</view> -->
+</mp-cell>
+<mp-cells ext-class="my-cells">
+  <mp-cell link value="昵称" footer="说明文字"></mp-cell>
+  <mp-cell link value="手机号" footer="说明文字"></mp-cell>
+</mp-cells>

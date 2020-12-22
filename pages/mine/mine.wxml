@@ -1,21 +1,33 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<!-- <text>pages/mine/mine.wxml</text> -->
 <!-- <view>
   <button open-type="share"></button>
 </view> -->
 <!-- <live-player src="https://domain/pull_stream" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 300px; height: 225px;" /> -->
-
-<mp-cell link url="../index" value="无hover效果，带跳转URL" footer="说明文字">
+<view class="userLogin">
+  <view class="userImg" style="background-image: url({{userIcon}}); background-size: 100% 100%;"></view>
+  <!-- <image style="" src="{{userIcon}}" ></image> -->
+</view>
+<mp-cell class="userInfo" value="无hover效果，带跳转URL" >
     <image slot="icon" src="{{userIcon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <view slot='footer' class="mini-btn" type="default" size="mini" bindtap="jumptoeditUserInfo">修改资料</view>
 </mp-cell>
+
 <view>
-  <text>
-    我看过的
-  </text>
-  <view style="width:50%; float:left" wx:for="{{mySeeList}}" wx:key="*this" >
+  <view style="display: flex;justify-content: space-between">
+    <text style="">我看过的</text>
+    <text bindtap="openSheet" wx:if="{{mySeeList.length > 0}}">清除</text>
+    <text wx:if="{{mySeeList.length == 0}}">暂无记录</text>
+  </view>
+  <view wx:if="{{mySeeList.length > 0}}" style="width:50%; float:left" wx:for="{{mySeeList}}" wx:key="*this" >
     <image src="{{item}}"></image>
   </view>
-  <mp-cell link url="../index" value="账号管理，带跳转URL">
-    <!-- <image slot="icon" src="{{userIcon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image> -->
-</mp-cell>
+<mp-cell link url="../index" value="账号管理，带跳转URL"></mp-cell>
+<mp-cell link url="../index" value="我的直播"></mp-cell>
+<mp-cell link url="../index" value="下载APP"></mp-cell>
+<mp-cell link url="../index" value="意见反馈"></mp-cell>
+<mp-cell bindtap="openSheetLogin" value="注销"></mp-cell>
 </view>
+
+<mp-actionSheet bindclose='closeSheet' bindactiontap="btnClick" show="{{showActionsheet}}" actions="{{sheetList}}" ></mp-actionSheet>
+<mp-actionSheet bindclose='closeSheet' bindactiontap="btnLoginOutClick" show="{{showLoginOutSheet}}" actions="{{sheetLoginOutList}}" ></mp-actionSheet>

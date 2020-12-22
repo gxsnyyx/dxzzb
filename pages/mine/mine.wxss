@@ -1,1 +1,17 @@
 /* pages/mine/mine.wxss */
+.userInfo .weui-cell__ft {
+  border-radius: 10px;
+  background: #11d49e;
+  font-size: 12px;
+  padding: 5px;
+}
+.userLogin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userLogin .userImg {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
