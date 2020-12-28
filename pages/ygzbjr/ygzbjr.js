@@ -1,20 +1,29 @@
-// pages/focus/focus.js
+// pages/ygzbjr/ygzbjr.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userIcon: ''
+    backImg: null,
+    weixinimg: '/images/xcxsy/u472.svg'
   },
-  statechange(e) {
-    console.log('live-pusher code:', e.detail.code)
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(this.getOpenerEventChannel(), 'this.getOpenerEventChannel()')
+    if (JSON.stringify(this.getOpenerEventChannel()) != '{}') {
+      const eventChannel = this.getOpenerEventChannel()
+      let self = this
+      eventChannel.on('acceptDataToyg', function(data) {
+        console.log(data)
+        self.setData({
+          backImg: data.backImg,
+        })
+      })
+    }
   },
 
   /**

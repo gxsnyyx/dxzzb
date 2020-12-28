@@ -30,7 +30,7 @@
     </view>
   </view>
   <!-- 待直播 -->
-  <view id="show_2" class="all_notice" style="background-image: url({{livingBackgroundImg}}); background-size: 100% 100%;">
+  <view bindtap="jumpToYG" data-img="{{livingBackgroundImg}}" id="show_2" class="all_notice" style="background-image: url({{livingBackgroundImg}}); background-size: 100% 100%;">
     <view>
       <text>预告</text>
       <text>今天18：45</text>

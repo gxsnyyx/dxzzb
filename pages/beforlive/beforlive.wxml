@@ -1,0 +1,9 @@
+<!--开播前准备-->
+<!-- <text>pages/beforlive/beforlive.wxml</text> -->
+<live-player src="https://domain/pull_stream" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 100vw; height: 100vh;" >
+  <cover-view class="" style="position:absolute;width: 100%;height: 300rpx;background:black;opacity: .5; bottom: 0px">
+    <cover-image bindtap="openShopTrolley" src="/images/xcxsy/u1390.png" style="position:absolute; width: 100rpx;height: 100rpx; top: 0px"></cover-image>
+    <!-- <cover-image src="/images/xcxsy/u1390.png" style="position:absolute; width: 100rpx;height: 100rpx; top: 0px"></cover-image> -->
+    <!-- <cover-image src="/images/xcxsy/u1390.png"></cover-image> -->
+  </cover-view>
+</live-player>

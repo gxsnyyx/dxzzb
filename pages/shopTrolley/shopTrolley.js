@@ -1,20 +1,29 @@
-// pages/focus/focus.js
+// pages/shopTrolley/shopTrolley.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userIcon: ''
+    tabs: [],
+    activeTab: 0,
   },
-  statechange(e) {
-    console.log('live-pusher code:', e.detail.code)
+  onTabCLick(e) {
+    const index = e.detail.index
+    this.setData({activeTab: index})
+  },
+
+  onChange(e) {
+    const index = e.detail.index
+    this.setData({activeTab: index})
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const titles = ['首页', 'title']
+    const tabs = titles.map(item => ({title: item}))
+    this.setData({tabs})
   },
 
   /**

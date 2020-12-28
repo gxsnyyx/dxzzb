@@ -1,0 +1,5 @@
+/* pages/shopTrolley/shopTrolley.wxss */
+.mpTabs{
+  width: 50vw;
+  text-align: center;
+}

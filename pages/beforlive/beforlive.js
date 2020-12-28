@@ -1,15 +1,24 @@
-// pages/focus/focus.js
+// pages/beforlive/beforlive.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userIcon: ''
+
   },
-  statechange(e) {
-    console.log('live-pusher code:', e.detail.code)
+  // 打开购物车
+  openShopTrolley(e){
+    let self = this
+    wx.navigateTo({
+      url: '../shopTrolley/shopTrolley',
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        // res.eventChannel.emit('acceptDataFromOpenerPage', { id: '110',userIcon: self.data.userIcon })
+      }
+    })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

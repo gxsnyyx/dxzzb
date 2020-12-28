@@ -22,6 +22,7 @@ Page({
   onShareAppMessage() {
 
   },
+  
   tabClick: function(e) {
     console.log(e)
     this.setData({
@@ -31,6 +32,18 @@ Page({
       toView: `show_${e.currentTarget.id}`
      })
   },
+  // 进入预告直播页
+  jumpToYG(e) {
+    console.log(e.currentTarget.dataset.img, 'e')
+    let self = this
+    wx.navigateTo({
+      url: '../ygzbjr/ygzbjr',
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataToyg', { backImg: e.currentTarget.dataset.img })
+      }
+    })
+  },
   // tabbar切换
   tabChange(e) {
     wx.switchTab({
@@ -39,11 +52,11 @@ Page({
     console.log('tab change', e)
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+  // bindViewTap: function() {
+  //   wx.navigateTo({
+  //     url: '../logs/logs'
+  //   })
+  // },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

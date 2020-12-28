@@ -1,0 +1,19 @@
+<!--预告直播进入-->
+<!-- <text>pages/ygzbjr/ygzbjr.wxml</text> -->
+<!-- <image src="{{backImg}}">
+
+</image> -->
+<!-- <mp-cells ext-class="my-cells" title=''> -->
+  <view>
+    <image slot="icon" src="{{weixinimg}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <text>title</text>
+    <view>name</view>
+    <view>subName</view>
+  </view>
+  <mp-cell class="userInfo" value="分享到">
+    <image slot="footer" src="{{weixinimg}}" class="footerImage"></image>
+    <!-- <view slot='footer' class="mini-btn" type="default" size="mini" bindtap="jumptoeditUserInfo"></view> -->
+  </mp-cell>
+  <button type="primary"> 页面主操作</button>
+  <!-- <mp-cell link value="手机号" footer="说明文字"></mp-cell> -->
+<!-- </mp-cells> -->
