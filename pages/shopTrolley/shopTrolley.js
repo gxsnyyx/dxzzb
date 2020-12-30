@@ -7,12 +7,27 @@ Page({
   data: {
     tabs: [],
     activeTab: 0,
+    cardList: [
+      {
+        id: '1',
+        cardImg: '/images/xcxsy/logo.png',
+        cardName: '这里是card的名字可能很长',
+        isHave: false,
+        cardTags: ['tag1','tag2'],
+        cardDesc: '这里是一个描述',
+        cardPrice: '这里是价格'
+      }
+    ]
+    // search: null
   },
   onTabCLick(e) {
     const index = e.detail.index
     this.setData({activeTab: index})
   },
-
+  // 搜索功能
+  selectResult(e) {
+    console.log('select result', e.detail)
+  },
   onChange(e) {
     const index = e.detail.index
     this.setData({activeTab: index})
@@ -24,8 +39,18 @@ Page({
     const titles = ['首页', 'title']
     const tabs = titles.map(item => ({title: item}))
     this.setData({tabs})
+    this.setData({
+      search: this.search.bind(this)
+  })
   },
-
+  search: function (value) {
+    console.log(value, 'value')
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve([{text: '搜索结果', value: 1}, {text: '搜索结果2', value: 2}])
+        }, 200)
+    })
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

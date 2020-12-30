@@ -1,5 +1,36 @@
 /* pages/shopTrolley/shopTrolley.wxss */
-.mpTabs{
+.mpTabs {
   width: 50vw;
   text-align: center;
+}
+.card_left {
+  float: left;
+  padding: 25rpx;
+  box-sizing: border-box;
+  width: 30%;
+}
+.card_left image {
+  width: 200rpx;
+  height: 120rpx;
+}
+.card_right {
+  float: right;
+  box-sizing: border-box;
+  padding-top: 25rpx;
+  width: 70%;
+  position: relative;
+}
+.mini-btn{
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+}
+.card_right_desc {
+  position: absolute;
+  top: 25rpx;
+  right: 0;
+  max-width: 155rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
