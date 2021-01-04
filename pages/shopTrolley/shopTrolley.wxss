@@ -34,3 +34,30 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.cardList{
+  box-shadow: inset 0px -1px 4px 1px #c4c4cc;
+  display: flex;
+  width: 98%;
+  margin: auto;
+}
+.tab-content{
+  height: calc(100vh - 162rpx);
+  position: relative;
+}
+.bottom-button{
+  width: 100%;
+  height: 120rpx;
+  position: absolute;
+  bottom: 0;
+  text-align: right;
+  border-top: 1px solid;
+}
+.weui-tabs-swiper{
+  height: calc(100vh - 52rpx);
+}
+.cancelButton {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 40rpx;
+}

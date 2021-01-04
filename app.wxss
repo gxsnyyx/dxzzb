@@ -11,4 +11,5 @@
 } 
 page {
   font-size: 30rpx;
+  height: 100vh;
 }

@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/shopTrolley/shopTrolley",
     "pages/beforlive/beforlive",
+    "pages/shopTrolley/shopTrolley",
     "pages/ygzbjr/ygzbjr",
     "pages/index/index",
     "pages/mine/mine",

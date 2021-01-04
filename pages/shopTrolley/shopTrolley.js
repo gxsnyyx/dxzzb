@@ -17,28 +17,39 @@ Page({
         cardDesc: '这里是一个描述',
         cardPrice: '这里是价格'
       }
-    ]
+    ],
+    myList:[]
     // search: null
   },
   onTabCLick(e) {
     const index = e.detail.index
     this.setData({activeTab: index})
   },
+
   // 搜索功能
   selectResult(e) {
     console.log('select result', e.detail)
   },
+
   onChange(e) {
+    
     const index = e.detail.index
     this.setData({activeTab: index})
   },
+  // 获取橱窗列表
+  getShopTrolleyList() {
+    // cardList
+    const titles = [`首页(${this.data.cardList.length})`, `title(${this.data.myList.length})`]
+    const tabs = titles.map(item => ({title: item}))
+    this.setData({tabs})
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const titles = ['首页', 'title']
-    const tabs = titles.map(item => ({title: item}))
-    this.setData({tabs})
+    
+    this.getShopTrolleyList()
     this.setData({
       search: this.search.bind(this)
   })

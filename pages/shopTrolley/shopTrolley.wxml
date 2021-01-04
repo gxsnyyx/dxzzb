@@ -7,14 +7,27 @@
   activeClass="tab-bar-title__selected"
   tab-class='mpTabs'
 >
-  <block wx:for="{{tabs}}" wx:key="title" wx:for-item="items">
+  <block wx:for="{{tabs}}" wx:key="title" wx:for-index="idx" wx:for-item="items">
     <!-- <view slot="tab-content-{{index}}" class="page__bd"> -->
-      <mp-searchbar slot="tab-content-{{index}}" bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+      <mp-searchbar slot="tab-content-{{idx}}" bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
     <!-- </view> -->
-    <view class="tab-content" slot="tab-content-{{index}}"> {{items.title}} </view>
-    <view slot="tab-content-0">
+    <!-- <view class="tab-content" slot="tab-content-{{index}}">{{index}} {{items.title}} </view> -->
+    <view class="tab-content" slot="tab-content-{{idx}}">
       <!-- 自定义card -->
-      <view wx:for="{{cardList}}" wx:key="id" wx:for-item="item">
+        <view wx:if="{{idx == 0}}" class="cardList" wx:for="{{cardList}}" wx:key="id" wx:for-item="item">
+          <view class="card_left">
+            <image src="{{item.cardImg}}"></image>
+          </view>
+          <view class="card_right">
+            <view class="card_right_name">{{item.cardName}}</view>
+            <text class="card_right_tags" wx:for="{{item.cardTags}}" wx:key="cell" wx:for-item="cell">{{cell}}</text>
+            <view class="card_right_desc">{{item.cardDesc}}</view>
+            <button style="font-size: 30rpx;" class="card_button" wx:if="{{!item.isHave}}" class="mini-btn" type="primary" size="mini">继续</button>
+            <button style="font-size: 30rpx;" class="card_button"  wx:if="{{item.isHave}}" class="mini-btn" type="default" size="mini">取消</button>
+            <view class="card_right_price">{{item.cardPrice}}</view>
+          </view>
+        </view>
+      <view wx:if="{{idx == 1}}" class="cardList myList" wx:for="{{myList}}" wx:key="id" wx:for-item="item">
         <view class="card_left">
           <image src="{{item.cardImg}}"></image>
         </view>
@@ -27,7 +40,10 @@
           <view class="card_right_price">{{item.cardPrice}}</view>
         </view>
       </view>
+      <view wx:if="{{idx == 1}}" class="bottom-button">
+        <button class="cancelButton" type="default" size="mini">移除</button>
+        <!-- <text>移除</text>  -->
+      </view>
     </view>
-    
   </block>
 </mp-tabs>
