@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar",
+    "painter":"/components/painter/painter"
   },
   "navigationBarTitleText": "dxzzb"
 }

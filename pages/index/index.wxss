@@ -91,11 +91,11 @@
 .index_people_counting{
   border-width: 0px;
   position: absolute;
-  left: 114rpx;
+  left: 112rpx;
   top: 10rpx;
   /* top: 269px; */
-  width: 54px;
-  height: 22px;
+  width: 104rpx;
+  height: 40rpx;
   background-color: #00000084;
   color: white;
   font-size: 24rpx;

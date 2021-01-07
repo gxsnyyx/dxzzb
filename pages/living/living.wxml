@@ -1,20 +1,47 @@
 <!--直播中-->
 <live-player src="https://domain/pull_stream" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 100vw; height: 100vh;" >
-  <cover-view class="" style="position:absolute;width: 100%;height: 300rpx;background:black;opacity: .5; bottom: 0px; text-align: right">
-    <view style="color: white; border: 2rpx solid white; border-radius:20rpx; width:66%; text-align:left;margin: 20rpx 0;white-space:pre-line">
-      这是一段对话这是一段对话这是一段对话这是一段对话这是一段对话这是一
-      段对话这是一段对话这是一段对话这是一段对话这是一段对话这是一段对话
-      这是一段对话这是一段对话这是一段对话这是一段对话
-    </view>
-    <view style="color: white; border: 2rpx solid white; border-radius:20rpx; width:50%; text-align:left;margin: 20rpx 0">
-      这是一段对话
-    </view>
-    <view style="color: white; border: 2rpx solid white; border-radius:20rpx; width:50%; text-align:left;margin: 20rpx 0">
-      这是一段对话
-    </view>
-    <mp-icon style="margin: 0 30rpx" icon="share" color="white" size="{{25}}"></mp-icon>
-    <mp-icon style="margin: 0 30rpx" icon="folder" color="white" size="{{25}}"></mp-icon>
-    <mp-icon style="margin: 0 30rpx" icon="comment" color="white" size="{{25}}"></mp-icon>
-    <!-- <cover-image bindtap="openShopTrolley" src="/images/xcxsy/u1390.png" style="position:absolute; width: 60rpx;height: 60rpx; top: 0px"></cover-image> -->
-  </cover-view>
+  
+  <!-- <button bindtap="showModal">111</button> -->
+  <!-- modal  -->
+  <!-- <cover-view> -->
+    
+<!-- </cover-view> -->
 </live-player>
+<view class="" style="position:absolute;width: 100%;background:black;opacity: .5; bottom: 0px; text-align: right">
+  <view style="color: white; border: 2rpx solid white; border-radius:20rpx; width:66%; text-align:left;margin: 20rpx 0;white-space:pre-line">
+    这是一段对话这是一段对话这是一段对话这是一段对话这是一段对话这是一
+  </view>
+  <view style="color: white; border: 2rpx solid white; border-radius:20rpx; width:50%; text-align:left;margin: 20rpx 0">
+    这是一段对话
+  </view>
+  <view style="color: white; border: 2rpx solid white; border-radius:20rpx; width:50%; text-align:left;margin: 20rpx 0">
+    这是一段对话
+  </view>
+  <!-- <button bindtap="showModal">111</button> -->
+  <mp-icon bindtap="showModal" style="margin: 0 30rpx" icon="share" color="white" size="{{25}}"></mp-icon>
+  <mp-icon style="margin: 0 30rpx" icon="folder" color="white" size="{{25}}"></mp-icon>
+  <mp-icon style="margin: 0 30rpx" icon="comment" color="white" size="{{25}}"></mp-icon>
+</view>
+<painter customStyle='position: absolute; left: -9999rpx;' palette="{{paintPallette}}" bind:imgOK="onImgOK" />
+<image hidden="{{hideFlag}}" src="{{image}}" class="poster"/>
+<view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
+  <view class="modal-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+    <!--  -->
+    <view class='Mselect'>
+      <view wx:for="{{optionList}}" wx:key="unique" data-value='{{item}}' bindtap='getOption'>
+        <image style="height: 100rpx;width: 100rpx;" src="/images/weixin.png"></image>
+        <view style="padding: 0">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <view></view>
+        <!-- <view class='Mcancel' bindtap='mCancel'>
+          <text>取消</text>
+        </view> -->
+  
+  </view>
+</view>
+<!-- <mp-actionSheet bindactiontap="btnClick" show="{{true}}" actions="{{groups}}" title="这是一个标题，可以为一行或者两行。">
+</mp-actionSheet> -->
