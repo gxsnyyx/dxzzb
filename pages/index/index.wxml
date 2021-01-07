@@ -9,7 +9,7 @@
   </block>
 </view>
 <scroll-view scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" class="all_live">
-  <view  id="show_0" class="swiper">
+  <view  id="show_0" class="swiper showView">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{background}}" wx:key="*this">
         <swiper-item>
@@ -19,29 +19,58 @@
     </swiper>
   </view>
   <!-- 直播中 -->
-  <view id="show_1" class="all_living" style="background-image: url({{livingBackgroundImg}}); background-size: 100% 100%;">
+  <view id="show_1" class="all_living showView" bindtap="jumpToLiving" data-id="1">
+    <image class="index_background" src="{{livingBackgroundImg}}"></image>
     <view>
-      <text>直播中</text>
-      <text>100000人观看</text>
+      <view style="background-color: #d9001bcd;" class="index_living">
+        直播中
+      </view>
+      <view class="index_people_counting">1000人观看</view>
     </view>
     <view class="all_living_bottom">
-      <view style="float:left">亚辉美食广场</view>
-      <view style="float:right">1.3w</view>
+      <image class="index_living_img_left" src="/images/u157.svg"></image>
+      <view class="index_living_name">亚辉美食广场</view>
+      <view style="position: absolute; right: 10rpx; bottom: 2rpx;">
+        <image class="index_living_img_right" src="/images/u164.svg"></image>
+        <text style="color: white;font-size: 24rpx;vertical-align: text-top;">1.3w</text>
+      </view>
     </view>
+  </view>
+  <view class="showView" style="display: flex;justify-content: space-between;">
+    <text style="font-size:28rpx" class="">name</text>
+    <button class="index_share_button" style="background-image: url(/images/weixin.png); background-size: 100% 100%;width: 30rpx;height: 30rpx;padding: 0;margin: 0; margin-top: 12rpx; margin-right: 7rpx;"></button>
   </view>
   <!-- 待直播 -->
-  <view bindtap="jumpToYG" data-img="{{livingBackgroundImg}}" id="show_2" class="all_notice" style="background-image: url({{livingBackgroundImg}}); background-size: 100% 100%;">
+  <view bindtap="jumpToYG" data-img="{{livingBackgroundImg}}" id="show_2" class="all_notice showView">
+    <image class="index_background" src="{{livingBackgroundImg}}"></image>
     <view>
-      <text>预告</text>
-      <text>今天18：45</text>
+      <view style="background-color: #02830fcb" class="index_living">
+        预告
+      </view>
+      <view class="index_people_counting">今天18：45</view>
+    </view>
+    <view class="all_living_bottom">
+      <image class="index_living_img_left" src="/images/u157.svg"></image>
+      <view class="index_living_name">亚辉美食广场</view>
     </view>
   </view>
+  <view class="showView" style="display: flex;justify-content: space-between;">
+    <text style="font-size:28rpx" class="">name</text>
+    <button class="index_share_button" style="background-image: url(/images/weixin.png); background-size: 100% 100%;width: 30rpx;height: 30rpx;padding: 0;margin: 0; margin-top: 12rpx; margin-right: 7rpx;"></button>
+  </view>
   <!-- 录播 -->
-  <view id="show_3" class="all_notice" style="background-image: url({{livingBackgroundImg}}); background-size: 100% 100%;">
+  <view id="show_3" class="all_notice showView">
+    <image class="index_background" src="{{livingBackgroundImg}}"></image>
     <view>
-      <text>录播</text>
-      <!-- <text>今天18：45</text> -->
+      <view style="background-color: #f59a23" class="index_living">
+        录播
+      </view>
+      <!-- <view class="index_people_counting">今天18：45</view> -->
     </view>
+  </view>
+  <view class="showView" style="display: flex;justify-content: space-between;">
+    <text style="font-size:28rpx" class="">name</text>
+    <button class="index_share_button" style="background-image: url(/images/weixin.png); background-size: 100% 100%;width: 30rpx;height: 30rpx;padding: 0;margin: 0; margin-top: 12rpx; margin-right: 7rpx;"></button>
   </view>
 </scroll-view>
 </view>
